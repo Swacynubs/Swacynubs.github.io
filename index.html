@@ -3,11 +3,10 @@
 <style>
       /* Style the video: 100% width and height to cover the entire window */
       #myVideo {
-        position: fixed;
         right: 0;
         bottom: 0;
-        min-width: 80%;
-        min-height: 80%;
+        min-width: 90%;
+        min-height: 90%;
       }
 
       /* Add some content at the bottom of the video/page */
@@ -35,12 +34,34 @@
         background: #ddd;
         color: black;
       }
+      .nav {
+         position: fixed;
+         top:0;
+         background: rgba(0, 0, 0, 0.5);
+         color: #f1f1f1;
+         width: 100%;
+         padding: 20px;
+      }
+      #navHome{
+        width: 200px;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        background: #000;
+        color: #fff;
+        cursor: pointer;
+      }
+      #navHome:hover{
+         background: #ddd;
+         color: black;
+      }
    </style>
    <head>
       <meta charset="utf-8">
       <title>Matt's Website</title>
    </head>
    <body>
+
       <video autoplay muted loop id="myVideo">
         <source src="pokemon.mp4" type="video/mp4">
       </video>
@@ -52,16 +73,19 @@
         <!-- Use a button to pause/play the video with JavaScript -->
         <button id="myBtn" onclick="myFunction()">Pause</button>
       </div>
+      <div class="nav">
+         <form action="https://swacynubs.github.io/" method="get">
+            <button id="navHome">Home</button>
+         </form>
+      </div>
    </body>
    <!-- The video -->
 </html>
 <script>
 // Get the video
 var video = document.getElementById("myVideo");
-
 // Get the button
 var btn = document.getElementById("myBtn");
-
 // Pause and play the video, and change the button text
 function myFunction() {
   if (video.paused) {
