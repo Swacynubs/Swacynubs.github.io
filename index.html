@@ -3,10 +3,13 @@
 <style>
       /* Style the video: 100% width and height to cover the entire window */
       #myVideo {
-        right: 0;
-        bottom: 0;
-        min-width: 90%;
-        min-height: 90%;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        width: 100%;
       }
 
       /* Add some content at the bottom of the video/page */
@@ -35,14 +38,14 @@
         color: black;
       }
       .nav {
-         position: fixed;
-         top:0;
+         top:1;
          background: rgba(0, 0, 0, 0.5);
          color: #f1f1f1;
          width: 100%;
          padding: 20px;
       }
       #navHome{
+        top: 1;
         width: 200px;
         font-size: 18px;
         padding: 10px;
@@ -55,16 +58,38 @@
          background: #ddd;
          color: black;
       }
+      .main{
+         text-align: center;
+         display: flex;
+         justify-content: center;
+         font-size: 6rem;
+         padding: 20px;
+         margin: 15px;
+         z-index: 0;
+         opacity: 0.7;
+         color:white;
+         background-color: blue;
+      }
+      .overlay{
+         position: absolute;
+         top: 0;
+         left: 0;
+         background-color: lightblue;
+         width: 100%;
+         opacity: 0.9;
+      }
    </style>
    <head>
       <meta charset="utf-8">
       <title>Matt's Website</title>
    </head>
    <body>
+      <div class="overlay">
+         <video muted loop id="myVideo">
+            <source src="pokemon.mp4" type="video/mp4">
+         </video>
+      </div>
 
-      <video autoplay muted loop id="myVideo">
-        <source src="pokemon.mp4" type="video/mp4">
-      </video>
 
       <!-- Optional: some overlay text to describe the video -->
       <div class="content">
@@ -73,10 +98,14 @@
         <!-- Use a button to pause/play the video with JavaScript -->
         <button id="myBtn" onclick="myFunction()">Pause</button>
       </div>
-      <div class="nav">
+      <!--<div class="nav">
          <form action="https://swacynubs.github.io/" method="get">
             <button id="navHome">Home</button>
          </form>
+      </div>-->
+      <div class="main">
+         <p>Matthew Pierre</p>
+
       </div>
    </body>
    <!-- The video -->
