@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<meta name="info" content="https://www.flaticon.com/categories/social-media">
 <style>
       /* Style the video: 100% width and height to cover the entire window */
       #myVideo {
@@ -11,9 +12,19 @@
         left: 0;
         width: 100%;
       }
-
+      .overlay{
+         min-width: 100%;
+         min-height: 100%;
+         width: auto;
+         height: auto;
+         position: absolute;
+         top: 0;
+         left: 0;
+         opacity: 1.0;
+         overflow: hidden;
+      }
       /* Add some content at the bottom of the video/page */
-      .content {
+      /*.content {
         position: fixed;
         bottom: 0;
         background: rgba(0, 0, 0, 0.5);
@@ -22,7 +33,7 @@
         padding: 20px;
       }
 
-      /* Style the button used to pause/play the video */
+      Style the button used to pause/play the video
       #myBtn {
         width: 200px;
         font-size: 18px;
@@ -37,6 +48,7 @@
         background: #ddd;
         color: black;
       }
+      */
       .nav {
          top:1;
          background: rgba(0, 0, 0, 0.5);
@@ -62,24 +74,48 @@
          text-align: center;
          display: flex;
          justify-content: center;
-         font-size: 6rem;
-         padding: 20px;
-         margin: 15px;
+         font-size: 8rem;
+         padding: 20px 0;
+         line-height: 450px;
+         height: 200px;
          z-index: 0;
-         opacity: 0.8;
+         opacity: 0.9;
          color:white;
-         font-family: fantasy;
-         background-color: gray;
+         font-family: Brush Script MT, cursive;
+         margin: auto;
+         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
       }
-      .overlay{
+      .pictures{
+         z-index: 0;
+         opacity: 0.9;
+         text-align: center;
+         justify-content: center;
+         padding-top: 13%;
+      }
+      .pictures img{
+         width: 100px;
+         height: 102px;
+         padding-right: 1%;
+      }
+      #facebook:hover{
+         content: url("facebookH.png")
+      }
+      #github:hover{
+         content: url("githubH.png")
+      }
+      #instagram:hover{
+         content: url("instagramH.png")
+      }
+      #linkedin:hover{
+         content: url("linkedinH.png")
+      }
+      #twitter:hover{
+         content: url("twitterH.png")
+      }
+      #youtube:hover{
+         content: url("youtubeH.png")
+      }
 
-         position: absolute;
-         top: 0;
-         left: 0;
-         background-color: gray;
-         width: 100%;
-         opacity: 1.0;
-      }
    </style>
    <head>
       <meta charset="utf-8">
@@ -92,25 +128,32 @@
          </video>
       </div>
 
-
-      <!-- Optional: some overlay text to describe the video -->
-      <div class="content">
-        <h1>Yeet</h1>
-        <p>Welcome to my house</p>
-        <!-- Use a button to pause/play the video with JavaScript -->
-        <button id="myBtn" onclick="myFunction()">Pause</button>
-      </div>
-      <!--<div class="nav">
-         <form action="https://swacynubs.github.io/" method="get">
-            <button id="navHome">Home</button>
-         </form>
-      </div>-->
       <div class="main">
-         <p>Matthew Pierre</p>
-
+         <p style="opacity: 1.0;">Matthew Pierre</p>
+      </div>
+      <br/>
+      <div class="pictures">
+         <a href="https://www.facebook.com/swacy.nubs">
+            <img src="facebook.png" id="facebook">
+         </a>
+         <a href="https://github.com/Swacynubs">
+            <img src="github.png" id="github">
+         </a>
+         <a href="https://www.instagram.com/mr.matthewphotograpy/">
+            <img src="instagram.png" id="instagram">
+         </a>
+         <a href="https://www.linkedin.com/in/matt-pierre-398408a9/">
+            <img src="linkedin.png" id="linkedin">
+         </a>
+         <a href="https://twitter.com/Swacynubs">
+            <img src="twitter.png" id="twitter">
+         </a>
+         <a href="https://www.youtube.com/channel/UCY9pkh34WRvpKdPMmCqGkLQ/videos">
+            <img src="youtube.png" id="youtube">
+         </a>
       </div>
    </body>
-   <!-- The video -->
+   
 </html>
 <script>
 // Get the video
