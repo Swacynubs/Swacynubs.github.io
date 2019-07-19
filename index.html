@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <meta name="info" content="https://www.flaticon.com/categories/social-media">
+<link rel="icon" type="image/ico" href="swacynubs.png" />
 <style>
-      /* Style the video: 100% width and height to cover the entire window */
       #myVideo {
         position: absolute;
         align-items: center;
@@ -116,6 +116,35 @@
          content: url("youtubeH.png")
       }
 
+      .myContent{
+         top: 300px;
+         position: relative;
+         /*padding-left: 5%;*/
+         margin-left: 5%;
+         border-style: solid;
+         border-width: medium;
+         border-color: gray;
+         border-radius: 5px;
+         display: inline-block;
+         padding: 1%;
+
+      }
+      .footer{
+         padding-bottom: 1%;
+         padding-top: 1%;
+         background-color: black;
+         color: white;
+         margin-top: 99%;
+         text-align: center;
+         font-size: 30px;
+
+      }
+      /*@keyframes fade-in {
+         from {opacity: 0; transform: scale(.7,.7)}
+         to {opacity: 1;}
+      }
+*/
+
    </style>
    <head>
       <meta charset="utf-8">
@@ -152,22 +181,26 @@
             <img src="youtube.png" id="youtube">
          </a>
       </div>
+      <div class="myContent">
+         <h1>Looking for more photograpy?</h1>
+         <br/>
+         <h2>Click here</h2>
+      </div>
    </body>
-
+   <footer class="footer">&copy Matthew Pierre 2019</footer>
 </html>
 <script>
-// Get the video
-var video = document.getElementById("myVideo");
-// Get the button
-var btn = document.getElementById("myBtn");
-// Pause and play the video, and change the button text
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
-}
+$(window).scroll(function () {
+    console.log($(window).scrollTop());
+    var topDivHeight = $(".overlay").height();
+    var viewPortSize = $(window).height();
+
+    var triggerAt = 100;
+    var triggerHeight = (topDivHeight - viewPortSize) + triggerAt;
+
+    if ($(window).scrollTop() >= triggerHeight) {
+        $('.myContent').css('visibility', 'visible').hide().fadeIn();
+        $(this).off('scroll');
+    }
+});
 </script>
